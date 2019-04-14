@@ -8,9 +8,24 @@ defmodule Flagmojis.MixProject do
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       description: description(),
-      deps: [],
-      name: "Flagmojis"
+      package: package(),
+      deps: deps(),
+      name: "Flagmojis",
+      source_url: "https://github.com/chrisgreg/Flagmojis"
     ]
+  end
+
+  defp package do
+    [
+      files: ["lib", "mix.exs", "README*", "LICENSE*"],
+      maintainers: ["Chris Gregori"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/chrisgreg/Flagmojis"}
+    ]
+  end
+
+  defp deps do
+    [{:ex_doc, ">= 0.0.0", only: :dev}]
   end
 
   def application do
