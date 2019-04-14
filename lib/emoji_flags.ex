@@ -21,7 +21,8 @@ defmodule Flagmojis do
       }
   """
   def by_country_name(name) do
-    Enum.find(@all_flags, nil, fn x -> x.name == name end)
+    name_up = String.upcase(name)
+    Enum.find(@all_flags, nil, &(String.upcase(&1.name) == name_up))
   end
 
   @doc """
@@ -38,7 +39,8 @@ defmodule Flagmojis do
       }
   """
   def by_iso(iso) do
-    Enum.find(@all_flags, nil, fn x -> x.iso == iso end)
+    iso_up = String.upcase(iso)
+    Enum.find(@all_flags, nil, &(&1.iso == iso_up))
   end
 
   @doc """
@@ -56,5 +58,44 @@ defmodule Flagmojis do
   """
   def by_unicode(unicode) do
     Enum.find(@all_flags, nil, fn x -> x.unicode == unicode end)
+  end
+
+  @doc """
+  Returns a list containing all available countries
+
+  ## Example
+
+      iex> Flagmojis.countries
+      ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola",
+       "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia",
+       "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain",
+       "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda",
+       "Bhutan", "Bolivia", "Bonaire, Sint Eustatius and Saba",
+       "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil",
+       "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria",
+       "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde",
+       "Cayman Islands", "Central African Republic", "Chad", "Chile", "China",
+       "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo",
+       ...]
+  """
+  def countries() do
+    Enum.reduce(@all_flags, [], &([&1.name | &2]))
+    |> Enum.sort
+  end
+
+  @doc """
+  Returns a list containing all available ISO codes
+
+  ## Example
+
+      iex> Flagmojis.iso_codes
+      ["AD", "AE", "AF", "AG", "AI", "AL", "AM", "AO", "AQ", "AR", "AS", "AT", "AU",
+       "AW", "AX", "AZ", "BA", "BB", "BD", "BE", "BF", "BG", "BH", "BI", "BJ", "BL",
+       "BM", "BN", "BO", "BQ", "BR", "BS", "BT", "BV", "BW", "BY", "BZ", "CA", "CC",
+       "CD", "CF", "CG", "CH", "CI", "CK", "CL", "CM", "CN", "CO", "CR", ...]
+  """
+  def iso_codes() do
+    Enum.reduce(@all_flags, [], &([&1.iso | &2]))
+    |> Enum.sort
   end
 end
