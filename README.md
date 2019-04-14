@@ -4,6 +4,18 @@
 
 An Elixir micro library that provides an easy lookup to country emoji flag information including ISO, Unicode, Emoji and Name.
 
+## Example
+
+```
+iex> Flagmojis.by_country_name("Cyprus")
+%Flagmojis.Flag{
+  emoji: "🇨🇾",
+  iso: "CY",
+  name: "Cyprus",
+  unicode: "U+1F1E8 U+1F1FE"
+}
+```
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
