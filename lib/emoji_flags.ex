@@ -1,5 +1,5 @@
-defmodule EmojiFlags do
-  alias EmojiFlags.Data
+defmodule Flagmojis do
+  alias Flagmojis.Data
 
   @all_flags Data.all()
 
@@ -8,12 +8,12 @@ defmodule EmojiFlags do
   """
 
   @doc """
-  Returns a EmojiFlags.Flag struct containing all flag information by name
+  Returns a Flagmojis.Flag struct containing all flag information by name
 
   ## Example
 
-      iex> EmojiFlags.by_country_name("Cyprus")
-      %EmojiFlags.Flag{
+      iex> Flagmojis.by_country_name("Cyprus")
+      %Flagmojis.Flag{
         emoji: "🇨🇾",
         iso: "CY",
         name: "Cyprus",
@@ -25,12 +25,12 @@ defmodule EmojiFlags do
   end
 
   @doc """
-  Returns a EmojiFlags.Flag struct containing all flag information by country ISO
+  Returns a Flagmojis.Flag struct containing all flag information by country ISO
 
   ## Example
 
-      iex> EmojiFlags.by_iso("GB")
-      %EmojiFlags.Flag{
+      iex> Flagmojis.by_iso("GB")
+      %Flagmojis.Flag{
         emoji: "🇬🇧",
         iso: "GB",
         name: "United Kingdom",
@@ -42,12 +42,12 @@ defmodule EmojiFlags do
   end
 
   @doc """
-  Returns a EmojiFlags.Flag struct containing all flag information by unicode
+  Returns a Flagmojis.Flag struct containing all flag information by unicode
 
   ## Example
 
-      iex> EmojiFlags.by_unicode("U+1F1EC U+1F1E7")
-      %EmojiFlags.Flag{
+      iex> Flagmojis.by_unicode("U+1F1EC U+1F1E7")
+      %Flagmojis.Flag{
         emoji: "🇬🇧",
         iso: "GB",
         name: "United Kingdom",

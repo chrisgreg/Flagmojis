@@ -1,4 +1,4 @@
-defmodule EmojiFlagsTest do
+defmodule FlagmojisTest do
   use ExUnit.Case
-  doctest EmojiFlags
+  doctest Flagmojis
 end

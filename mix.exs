@@ -1,13 +1,15 @@
-defmodule EmojiFlags.MixProject do
+defmodule Flagmojis.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :emoji_flags,
+      app: :flagmojis,
       version: "1.0.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      description: description(),
+      deps: [],
+      name: "Flagmojis"
     ]
   end
 
@@ -17,7 +19,7 @@ defmodule EmojiFlags.MixProject do
     ]
   end
 
-  defp deps do
-    []
+  defp description do
+    "An Elixir micro library that provides an easy lookup to country emoji flag information including ISO, Unicode, Emoji and Name."
   end
 end

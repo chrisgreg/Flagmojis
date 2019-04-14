@@ -1,5 +1,5 @@
-defmodule EmojiFlags.Data do
-  alias EmojiFlags.Flag
+defmodule Flagmojis.Data do
+  alias Flagmojis.Flag
 
   def all do
     [

@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :emoji_flags, key: :value
+#     config :flagmojis, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:emoji_flags, :key)
+#     Application.get_env(:flagmojis, :key)
 #
 # You can also configure a 3rd-party app:
 #
