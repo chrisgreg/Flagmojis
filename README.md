@@ -1,5 +1,7 @@
 # Flagmojis
 
+![Downloads](https://img.shields.io/hexpm/dt/flagmojis)
+
 ## What?
 
 An Elixir micro library that provides an easy lookup to country emoji flag information including ISO, Unicode, Emoji and Name.
